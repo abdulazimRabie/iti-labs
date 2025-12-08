@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <h1>Register New User</h1>
+    <div style="width: 800px; margin-inline: auto">
+        <form action="thankyou.html" method="get" enctype="multipart/form-data" >
+        <input type="hidden" name="userid" value="12345">
+
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="firstname" required tabindex="1" accesskey="f" size="50">
+        <br><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lastname" required tabindex="2" accesskey="l" size="50">
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required tabindex="3" accesskey="e" size="50">
+        <br><br>
+
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="password" required minlength="6" tabindex="4" accesskey="p" size="50">
+        <br><br>
+
+        <label for="rpass">Repeat Password:</label>
+        <input type="password" id="rpass" name="repeatpassword" required minlength="6" tabindex="5" accesskey="r" size="50">
+        <br><br>
+
+        <label for="bdate">Birth Date:</label>
+        <input type="date" id="bdate" name="birthdate" tabindex="6" accesskey="b">
+        <br><br>
+
+        <label for="pic">User Picture:</label>
+        <input type="file" id="pic" name="picture" accept="image/*" tabindex="7" accesskey="u">
+        <br><br>
+
+        <fieldset>
+            <legend>Gender</legend>
+            <label><input type="radio" name="gender" value="male" required tabindex="8"> Male</label>
+            <br>
+            <label><input type="radio" name="gender" value="female" tabindex="9"> Female</label>
+        </fieldset>
+        <br>
+
+        <label for="faculty">Faculty:</label>
+        <select id="faculty" name="faculty" tabindex="10" accesskey="c">
+            <option value="">--Choose Faculty--</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Commerce">Commerce</option>
+            <option value="Science">Science</option>
+        </select>
+        <br><br>
+
+        <fieldset>
+            <legend>Interests</legend>
+            <label><input type="checkbox" name="interest" value="Programming" tabindex="11"> Programming</label><br>
+            <label><input type="checkbox" name="interest" value="Reading" tabindex="12"> Reading</label><br>
+            <label><input type="checkbox" name="interest" value="Swimming" tabindex="13"> Swimming</label><br>
+            <label><input type="checkbox" name="interest" value="Music" tabindex="14"> Music</label>
+        </fieldset>
+        <br>
+
+        <label for="about">About You:</label><br>
+        <textarea id="about" name="about" rows="5" cols="40" tabindex="15" accesskey="a"></textarea>
+        <br><br>
+
+        <label>
+            <input type="checkbox" name="terms" required tabindex="16"> 
+            I agree to the 
+            <a href="terms.html" target="_blank">terms and conditions</a>
+        </label>
+        <br><br>
+
+        <button type="submit" tabindex="17" accesskey="s">Submit</button>
+        <button type="reset" tabindex="18" accesskey="x">Reset</button>
+    </form>
+    </div>
+</body>
+</html>

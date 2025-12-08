@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .input-group[required]::after {
+            content: " *";
+            color: red;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        .error {
+            display: none;
+            font-size: 14px;
+            color: black;
+        }
+
+        input:invalid,
+        select:invalid,
+        textarea:invalid {
+            border: 2px solid black !important;
+        }
+
+        input:invalid + .error,
+        select:invalid + .error,
+        textarea:invalid + .error {
+            display: block;
+        }
+
+        input:valid,
+        select:valid,
+        textarea:valid {
+            border: 2px solid white !important;
+        }
+
+        input:valid + .error,
+        select:valid + .error,
+        textarea:valid + .error {
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>  
+    <h1>Register New User</h1>
+    <div style="width: 800px; margin-inline: auto">
+        <form action="thankyou.html" method="get" enctype="multipart/form-data" >
+        <input type="hidden" name="userid" value="12345">
+
+        <!-- FIRST NAME -->
+        <label for="fname">First Name:</label>
+        <div class="input-group" required>
+            <input type="text" id="fname" name="firstname" required size="50">
+            <span class="error">Not valid</span>
+        </div>
+        <br><br>
+
+        <!-- LAST NAME -->
+        <label for="lname">Last Name:</label>
+        <div class="input-group" required>
+            <input type="text" id="lname" name="lastname" required size="50">
+            <span class="error">Not valid</span>
+        </div>
+        <br><br>
+
+        <!-- EMAIL -->
+        <label for="email">Email:</label>
+        <div class="input-group" required>
+            <input type="email" id="email" name="email" required size="50">
+            <span class="error">Not valid</span>
+        </div>
+        <br><br>
+
+        <!-- PASSWORD -->
+        <label for="pass">Password:</label>
+        <div class="input-group" required>
+            <input type="password" id="pass" name="password" required minlength="6" size="50">
+            <span class="error">Not valid</span>
+        </div>
+        <br><br>
+
+        <!-- REPEAT PASSWORD -->
+        <label for="rpass">Repeat Password:</label>
+        <div class="input-group" required>
+            <input type="password" id="rpass" name="repeatpassword" required minlength="6" size="50">
+            <span class="error">Not valid</span>
+        </div>
+        <br><br>
+
+        <!-- BIRTH DATE -->
+        <label for="bdate">Birth Date:</label>
+        <div class="input-group">
+            <input type="date" id="bdate" name="birthdate">
+            <span class="error">Not valid</span>
+        </div>
+        <br><br>
+
+        <!-- PICTURE -->
+        <label for="pic">User Picture:</label>
+        <div class="input-group">
+            <input type="file" id="pic" name="picture" accept="image/*">
+            <span class="error">Not valid</span>
+        </div>
+        <br><br>
+
+        <fieldset>
+            <legend>Gender</legend>
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <br>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+        </fieldset>
+        <br>
+
+        <label for="faculty">Faculty:</label>
+        <div class="input-group" required>
+            <select id="faculty" name="faculty" required>
+                <option value="">--Choose Faculty--</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Medicine">Medicine</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Science">Science</option>
+            </select>
+            <span class="error">Not valid</span>
+        </div>
+        <br><br>
+
+        <label for="about">About You:</label><br>
+        <div class="input-group">
+            <textarea id="about" name="about" rows="5" cols="40"></textarea>
+            <span class="error">Not valid</span>
+        </div>
+        <br><br>
+
+        <label>
+            <input type="checkbox" name="terms" required> 
+            I agree to the 
+            <a href="terms.html" target="_blank">terms and conditions</a>
+        </label>
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    </div>
+</body>
+</html>

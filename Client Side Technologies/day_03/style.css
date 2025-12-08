@@ -1,0 +1,120 @@
+p, div, span {
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: "Lugrasimo", cursive;
+} 
+
+div h1 {
+    text-align: center;
+}
+
+/* Body */
+body {
+    height: 2000px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Helpers */
+.none-bullet-list {
+    list-style-type: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: gray;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar ul, .navbar ul li {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    display: inherit;
+    text-decoration: none;
+    padding: 10px 30px;
+    color: white
+}
+
+.navbar ul li a:hover {
+    background-color: greenyellow;
+}
+
+/* Header */
+#header {
+    padding-block:  30px;
+    /* margin-top: 50px */
+}
+
+#header h1 {
+    padding: 0;
+    margin: 0;
+}
+
+/* Container */
+#content::after {
+    content: "";
+    clear:both;
+}
+
+
+/* LinksBar side */
+#linksbar {
+    background-color: gray;
+}
+#linksbar ul li > a {
+    text-decoration: none;
+    color: red;
+    background-color: pink;
+}
+
+#linksbar ul li > a:hover {
+    color: pink;
+    background-color: red;
+}
+
+.loginform {
+    border: 2px dashed rgb(20,70,60);
+}
+
+input[type="text"] {
+    background-color: yellow;
+}
+
+input[type="text"]:focus {
+    background-color: white;
+}
+
+/* Content Side */
+#content h2 + p {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.titles p::after {
+    content: " < Read this";
+    color: yellow;
+}
+
+.tabled-bordered {
+    display: table-cell;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+/* Up to page */
+
+.up-to-page {
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}

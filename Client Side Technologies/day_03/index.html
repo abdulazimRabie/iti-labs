@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+
+    <style>
+        #content #aboutus {
+            color: yellow
+        }
+
+        p#aboutus {
+            color: red !important;
+        }
+
+    </style>
+</head>
+<body>    
+    <!-- Header -->
+    <div id="header" style="width: 100%; background-color: red">
+        <h1>this is page header</h1>
+    </div>
+    
+    <!-- Navbar -->
+    <div class="navbar">
+        <ul class="none-bullet-list">
+            <li>
+                <a href="home.html">Home</a>
+            </li>
+            <li>
+                <a href="register.html">Register</a>
+            </li>
+            <li>
+                <a href="Contact.html">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Body -->
+    <div class="container">
+        <!-- Lisbar -->
+        <span id="linksbar" style="width: 25%; float: left">
+            <div class="loginform">
+                <form action="https://internal.iti.gov.eg/" method="post">
+                    <div>
+                        <label for="username_input">Username</label>
+                        <input type="text" name="username" id="username_input">
+                    </div>
+
+                    <div>
+                        <label for="password_input">Password</label>
+                        <input type="password" name="password" id="password_input">
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="checkbox_rememberme" id="checkbox_rememberme">
+                        <label for="checkbox_rememberme">remeber me</label>
+                    </div>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+            <div class="site-menu">
+                <ul class="none-bullet-list">
+                    <h2>Site Menu</h2>
+                    <li>
+                        <a href="">Link1</a>
+                    </li>
+                    <li>
+                        <a href="">Link2</a>
+                    </li>
+                    <li>
+                        <a href="">Link3</a>
+                    </li>
+                    <li>
+                        <a href="">Link4</a>
+                    </li>
+                </ul>
+            </div>
+        </span>
+
+        <!-- Content -->
+        <span id="content" style="width: 75%; background-color: pink; float: right">
+            <h2>about us</h2>
+
+            <p id="aboutus">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam recusandae, sequi suscipit ut quo debitis asperiores rem, saepe, tempora praesentium voluptas ratione? Ipsa, consequuntur. Necessitatibus, excepturi ratione! Omnis molestiae ea maiores cumque sit ratione ab, unde temporibus hic quos exercitationem.</p>
+
+            <div class="titles">
+                <span class="tabled-bordered">title1</span>
+                <span class="tabled-bordered">title2</span>
+                <span class="tabled-bordered">title3</span>
+            </div>
+        </span>
+        <!--  -->
+    </div>
+
+    <a href="#header" class="up-to-page">
+        <img src="./resources/Pasted image.png" alt="Icons Image">
+    </a>
+
+</body>
+</html>

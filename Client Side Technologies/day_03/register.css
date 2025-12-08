@@ -1,0 +1,54 @@
+/* Wrapper for required inputs with asterisk */
+        .required-field {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Add red asterisk after required input containers */
+        .required-field::after {
+            content: '*';
+            color: red;
+            font-size: 18px;
+            margin-left: 5px;
+        }
+
+        /* Invalid inputs - black border */
+        input:invalid {
+            border: 2px solid black;
+        }
+
+        /* Valid inputs - white border */
+        input:valid {
+            border: 2px solid white;
+        }
+
+        /* Error message styling */
+        .error-message {
+            color: red;
+            font-size: 12px;
+            display: block;
+        }
+
+        /* Hide error message when input is valid */
+        input:valid + .error-message {
+            display: none;
+        }
+
+        /* Show error message when input is invalid */
+        input:invalid + .error-message {
+            display: block;
+        }
+
+        /* Required fieldset styling */
+        .required-fieldset {
+            position: relative;
+        }
+
+        .required-fieldset::after {
+            content: '*';
+            color: red;
+            font-size: 18px;
+            position: absolute;
+            right: 10px;
+            top: -10px;
+        }
