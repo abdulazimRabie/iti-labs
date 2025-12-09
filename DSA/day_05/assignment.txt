@@ -1,0 +1,21 @@
+Lab:
+1- Tree (BST) full implementation (
+    Nodes
+    -Traversals
+    -Insertion
+    -Deletion
+    -ArrayToTree (the first index is the root and complete the BST)
+    -SortedArrayToBFS (the mid index will be the root and complete it
+
+).
+
+
+
+
+2- Graphs Adjacent Matrix Representation.
+3- Graphs Adjacent List Representation.
+
+4- Mini Presentation: One of Two Subjects (
+    Graph Traversals[BFS/DFS]
+    - Shortest Path Algorithms[Dijkstra/Bellman
+    - Ford/Floyd-Warshal]) Choose only one algorithm of the two topics.
