@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(day_05 main.cpp
         tree.h
-        graph.h)
+        graph.h
+)
