@@ -1,7 +1,7 @@
 function ensureFormat(input) {
     if (input.length != 10) 
         throw new Error("Your date is not 10 character, format dd-mm-yyyy");
-    if (input[2] != '-' || input[5] != '-') 
+    if (input[2] != '-' || input[5] != '-')  // dd-mm-yyyy
         throw new Error("it misses `-`, format must be dd-mm-yyyy");
     return true;
 }
