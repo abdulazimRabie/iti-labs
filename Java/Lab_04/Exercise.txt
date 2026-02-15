@@ -1,0 +1,8 @@
+## Functional Interface
+
+- Develop an application to convert temperature from
+Centigrade to Fahrenheit using Function<T,R>
+
+- Use the interfaces in java.util.function to build an application
+that defines the roots of the quadratic equation ... and the roots could be computed by the following
+formula ...
