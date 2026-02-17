@@ -1,0 +1,35 @@
+.name-container {
+  height: 100vh;
+  background-color: burlywood;
+  display: grid;
+  place-content: center;
+}
+.name-container > div {
+  width: 400px;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 13px;
+  outline: none;
+}
+
+button {
+  display: block;
+  background-color: gray;
+  border: none;
+  border-radius: 13px;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+p {
+  height: 10px;
+}
+
+

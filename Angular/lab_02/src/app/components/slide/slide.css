@@ -1,0 +1,24 @@
+.container-slide {
+  background-color: coral;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+div img {
+  width: 600px;
+  height: 600px;
+  border-radius: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons button {
+  border: none;
+  padding: 6px 15px;
+  border-radius: 10px;
+}

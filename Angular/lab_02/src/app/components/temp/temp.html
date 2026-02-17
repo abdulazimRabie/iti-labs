@@ -1,0 +1,25 @@
+<div class="temp-container">
+  <div class="inner-wrapper">
+    <div>
+      <h2>Temprature Converter</h2>
+    </div>
+    <div>
+      <!-- Celsius -->
+      <div>
+        <span>Celsuis</span>
+        <input type="number" value="0" (input)="convertToFahernheit($event)">
+      </div>
+
+      <!-- Fahernheit -->
+       <div>
+        <span>Fahrenhiet</span>
+        <input type="number" readonly value="{{fahern_val}}">
+       </div>
+
+       <!-- Note -->
+       <div>
+          <p>Note about converter</p>
+       </div>
+    </div>
+  </div>
+</div>
