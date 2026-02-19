@@ -1,0 +1,50 @@
+.notification-container {
+  margin-top: 50px;
+  min-height: 500px;
+  display: grid;
+  justify-content: center;
+}
+
+.controllers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button.success {
+  background-color: #44A194;
+}
+
+button.error {
+  background-color: #EC8F8D;
+}
+
+button.warning {
+  background-color: #FFD586;
+  color: #000;
+}
+
+button.normal-msg {
+  background-color: #F4F0E4;
+}
+

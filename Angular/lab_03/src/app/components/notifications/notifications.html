@@ -1,0 +1,40 @@
+<div class="notification-container">
+  <div class="controllers">
+    <div>
+      <input type="text" placeholder="Write the message" [(ngModel)]="msgValue">
+    </div>
+    <div class="buttons">
+      <button (click)="success()" class="success">Success</button>
+      <button (click)="warnning()" class="warning">Warnning</button>
+      <button (click)="error()" class="error">Error</button>
+      <button (click)="messageNormal()" class="normal-msg">Message</button>
+    </div>
+  </div>
+
+  <div class="noti-center">
+
+    @switch (status) {
+      @case ("success") {
+        <app-success [message]="msgValue"></app-success>
+      }
+
+      @case ("error") {
+        <app-error [message]="'Message of ERRRRRor'"></app-error>
+      }
+
+      @case ("warnning") {
+        <app-warnning [message]="'Message of warning'"></app-warnning>
+      }
+
+      @case ("normal") {
+        <app-normal-message [message]="'Message of Noemal'"></app-normal-message>
+      }
+
+      @default {}
+    }
+  </div>
+
+  <div>
+    <ng-container #notiCenterDisplay></ng-container>
+  </div>
+</div>

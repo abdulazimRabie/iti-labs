@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+}
+.home-container {
+}
+
+.products-section {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 100vh;
+}

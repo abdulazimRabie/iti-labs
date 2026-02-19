@@ -1,0 +1,12 @@
+.display-container {
+  border: 1px solid #000;
+  padding: 40px;
+  width: 800px;
+  min-height: 500px;
+  border-radius: 10px;
+}
+
+.products-wrapper {
+  display: grid;
+  gap: 10px;
+}

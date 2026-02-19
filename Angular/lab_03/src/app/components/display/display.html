@@ -1,0 +1,8 @@
+<div class="display-container">
+  <h2>Products : </h2>
+  <div class="products-wrapper">
+    @for (item of products; track $index) {
+      <app-card [product]="item" [product_idx]="$index" (deleteProductAt)="deleteProduct($event)"></app-card>
+    }
+  </div>
+</div>

@@ -1,0 +1,11 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-success',
+  imports: [],
+  templateUrl: './success.html',
+  styleUrl: './success.css',
+})
+export class Success {
+  @Input() message! : string;
+}

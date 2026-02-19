@@ -1,0 +1,13 @@
+div {
+  background-color: #F4F0E4;
+  color: #000;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-block: 10px;
+  width: fit-content;
+  overflow: hidden;
+}
+
+div p {
+  margin: 0;
+}

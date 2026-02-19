@@ -1,0 +1,18 @@
+<h1>Insert Product and Show 'EM</h1>
+
+<div class="home-container">
+  <!-- Products -->
+  <div class="products-section">
+    <div>
+        <app-data-field (newProduct)="recieveProduct($event)"></app-data-field>
+    </div>
+    <div>
+      <app-display [products]="products"></app-display>
+    </div>
+  </div>
+
+  <!-- Notifications -->
+  <div>
+    <app-notifications></app-notifications>
+  </div>
+</div>

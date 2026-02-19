@@ -1,0 +1,24 @@
+<div class="data-field-container">
+  <h2>Product Data : </h2>
+  <div class="field">
+    <label>Product Name : </label>
+    <!-- <input type="text" (input)="updateText($event)">-->
+    <input type="text" [(ngModel)]="productName">
+  </div>
+  <div class="field">
+    <label>Product Price : </label>
+    <input type="Number" [(ngModel)]="productPrice" [class]="{warrning: productPrice < 0}">
+  </div>
+
+  <div class="controlers">
+    <button (click)="addNewProduct($event)">Add Product</button>
+  </div>
+
+  <div class="messages">
+    @if (status == "success") {
+      <app-success [message]="'product added'"></app-success>
+    } @else if (status == "fail") {
+      <app-error [message]="'insert data properly'"></app-error>
+    }
+  </div>
+</div>
