@@ -1,0 +1,16 @@
+<div class="home-container">
+  <app-nav></app-nav>
+  <app-fields [product_to_modify]="this.modified_product" (sendProduct)="recieveNewProduct($event)"></app-fields>
+
+  <app-product-repo
+    [new_product]="product"
+    (modify_product)="sendModifyToFeild($event)"
+    (loved_product)="receiveWishedProduct($event)"
+    (remove_from_wishlist)="updateWishList($event)"
+  />
+
+  <app-wishlist
+    [product]="wishProduct"
+    [deleteFromWishList]="removed_product_from_wishlist"
+  />
+</div>

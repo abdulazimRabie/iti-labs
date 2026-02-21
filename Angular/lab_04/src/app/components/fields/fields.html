@@ -1,0 +1,119 @@
+<div class="p-3 mt-3">
+  <h2>Add New Product : </h2>
+  <form [formGroup]="form" (submit)="handleSubmit(form)" action="">
+
+    <!-- Name, Description -->
+    <div class="row g-3 pb-3">
+
+      <div class="col">
+        <label for="">Name</label>
+        <input
+          type="text"
+          [class]="{'form-control': true, 'border-danger': form.controls['name'].touched && form.controls['name'].errors}"
+          placeholder="e.g Soundcore life p2"
+          aria-label="product-name"
+          formControlName="name"
+        >
+        @if (form.controls['name'].touched && form.controls['name'].errors?.['required']) {
+          <span class="text-danger mt-1 d-inline-block">Product name is required</span>
+        } @else if (form.controls['name'].touched && form.controls['name'].errors?.['minlength']) {
+          <span class="text-danger mt-1 d-inline-block">Product name must be at least 5 characters</span>
+        }
+      </div>
+
+      <div class="col">
+        <label for="">Description</label>
+        <input
+          type="text"
+          [class]="{'form-control': true, 'border-danger': form.controls['description'].touched && form.controls['description'].errors}"
+          placeholder="A headphone with smooth voice and ..."
+          aria-label="product-description"
+          formControlName="description"
+        >
+        @if (form.controls['description'].touched && form.controls['description'].errors?.['required']) {
+          <span class="text-danger mt-1 d-inline-block">Description is required</span>
+        } @else if (form.controls['description'].touched && form.controls['description'].errors?.['minlength']) {
+          <span class="text-danger mt-1 d-inline-block">Description must be at least 10 characters</span>
+        }
+      </div>
+
+    </div>
+
+    <!-- Price, Seller -->
+    <div class="row g-3 pb-3">
+
+      <div class="col">
+        <label for="">Price</label>
+        <input
+          type="number"
+          [class]="{'form-control': true, 'border-danger': form.controls['price'].touched && form.controls['price'].errors}"
+          placeholder="e.g $20"
+          aria-label="product-price"
+          formControlName="price"
+        >
+        @if (form.controls['price'].touched && form.controls['price'].errors?.['required']) {
+          <span class="text-danger mt-1 d-inline-block">Price is required</span>
+        } @else if (form.controls['price'].touched && form.controls['price'].errors?.['min']) {
+          <span class="text-danger mt-1 d-inline-block">Price must be greater than 0</span>
+        }
+      </div>
+
+      <div class="col">
+        <label for="">Seller</label>
+        <input
+          type="text"
+          [class]="{'form-control': true, 'border-danger': form.controls['seller'].touched && form.controls['seller'].errors}"
+          placeholder="e.g A.azim ..."
+          aria-label="product-seller"
+          formControlName="seller"
+        >
+        @if (form.controls['seller'].touched && form.controls['seller'].errors?.['required']) {
+          <span class="text-danger mt-1 d-inline-block">Seller name is required</span>
+        } @else if (form.controls['seller'].touched && form.controls['seller'].errors?.['minlength']) {
+          <span class="text-danger mt-1 d-inline-block">Seller name must be at least 5 characters</span>
+        }
+      </div>
+
+    </div>
+
+    <!-- Color, Images -->
+    <div class="row g-3 pb-3">
+
+      <div class="col">
+        <label for="">Color</label>
+        <input
+          type="text"
+          [class]="{'form-control': true, 'border-danger': form.controls['color'].touched && form.controls['color'].errors}"
+          placeholder="e.g Red"
+          aria-label="product-color"
+          formControlName="color"
+        >
+        @if (form.controls['color'].touched && form.controls['color'].errors?.['required']) {
+          <span class="text-danger mt-1 d-inline-block">Color is required</span>
+        } @else if (form.controls['color'].touched && form.controls['color'].errors?.['minlength']) {
+          <span class="text-danger mt-1 d-inline-block">Color must be at least 5 characters</span>
+        }
+      </div>
+
+      <div class="col">
+        <label for="">Images</label>
+        <input
+          type="text"
+          [class]="{'form-control': true, 'border-danger': form.controls['images'].touched && form.controls['images'].errors}"
+          placeholder="e.g photo1.jpg ..."
+          aria-label="product-images"
+          formControlName="images"
+        >
+        @if (form.controls['images'].touched && form.controls['images'].errors?.['required']) {
+          <span class="text-danger mt-1 d-inline-block">Images field is required</span>
+        } @else if (form.controls['images'].touched && form.controls['images'].errors?.['minlength']) {
+          <span class="text-danger mt-1 d-inline-block">Images field must be at least 5 characters</span>
+        }
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-success w-100 fw-bold fs-1" [disabled]="form.invalid">Add <i class="bi bi-plus-circle-dotted"></i> </button>
+
+  </form>
+</div>
