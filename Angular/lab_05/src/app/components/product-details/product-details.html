@@ -1,0 +1,110 @@
+@if (product) {
+  <div class="container py-5">
+
+    <!-- Product Header -->
+    <div class="mb-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/az" class="text-decoration-none text-muted">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="../" class="text-decoration-none text-muted">Products</a></li>
+          <li class="breadcrumb-item active text-dark fw-semibold">{{ product.name }}</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Product Section -->
+    <div class="row g-5 align-items-start">
+
+      <!-- Carousel Column -->
+      <div class="col-lg-6">
+        <div id="carouselExample" class="carousel slide rounded-4 overflow-hidden shadow-sm border">
+          <div class="carousel-indicators">
+            @for (image of product.images; track $index) {
+              <button
+                type="button"
+                data-bs-target="#carouselExample"
+                [attr.data-bs-slide-to]="$index"
+                [class.active]="$index === 0"
+                [attr.aria-current]="$index === 0 ? 'true' : null"
+              >
+              </button>
+            }
+          </div>
+          <div class="carousel-inner" style="max-height: 480px;">
+            @for (image of product.images; track $index) {
+              <div class="carousel-item active">
+                <img src="/images/{{image}}" class="d-block w-100 object-fit-cover" style="height: 480px;" alt="{{ product.name }}">
+              </div>
+            }
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Product Info Column -->
+      <div class="col-lg-6 d-flex flex-column gap-4">
+
+        <!-- Name & Price -->
+        <div>
+          <h1 class="fw-bold fs-2 mb-2">{{ product.name }}</h1>
+          <div class="d-flex align-items-center gap-3">
+            <span class="fs-3 fw-bold text-success">${{ product.price }}</span>
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill">In Stock</span>
+          </div>
+        </div>
+
+        <hr class="text-muted">
+
+        <!-- Quick Details -->
+        <div class="d-flex flex-column gap-2">
+          <div class="d-flex align-items-center gap-2">
+            <span class="text-muted" style="width: 90px;">Color</span>
+            <span class="fw-semibold">
+              <span class="me-1">●</span>{{ product.color }}
+            </span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="text-muted" style="width: 90px;">Quantity</span>
+            <span class="fw-semibold">{{ product.quantity }} units</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="text-muted" style="width: 90px;">Seller</span>
+            <span class="fw-semibold">{{ product.seller }}</span>
+          </div>
+        </div>
+
+        <!-- Add to Cart -->
+        <div class="d-flex gap-3 mt-2">
+          <button class="btn btn-success btn-lg px-5 py-3 fw-semibold rounded-3 flex-grow-1 shadow-sm">
+              <i class="bi bi-cart-plus me-1"></i>
+              <span (click)="addToCart()">Add to Cart</span>
+          </button>
+          <button class="btn btn-outline-secondary btn-lg px-3 py-3 rounded-3" title="Save to wishlist">
+            ♡
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Product Description Card -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4">
+          <div class="card-body p-4">
+            <h5 class="fw-bold mb-3 pb-2">Product Details</h5>
+            <p class="text-muted lh-lg mb-0">{{ product.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+}

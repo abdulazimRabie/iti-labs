@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-center flex-wrap align-items-center gap-4">
+  @for (product of products; track product.id) {
+    <app-product-card [product]="product"/>
+  }
+</div>

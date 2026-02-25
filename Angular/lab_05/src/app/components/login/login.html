@@ -1,0 +1,40 @@
+<div class="w-75 m-auto">
+  <form [formGroup]="form" (submit)="handleSubmit(form)" class="d-grid gap-4">
+    <!-- Username -->
+    <div>
+      <label class="form-label">Username : </label>
+      <input
+        type="text"
+        [class]="['form-control', form.controls['username'].touched && form.controls['username'].invalid ? 'border-danger' : '']"
+        name="username"
+        formControlName="username">
+
+      @if (form.controls["username"].touched && form.controls["username"].errors?.["required"]) {
+        <span class="text-danger">Username is required</span>
+      } @else if (form.controls["username"].touched && form.controls["username"].errors?.["minlength"]) {
+        <span class="text-danger">Username must be more than {{form.controls["username"].errors?.["minlength"].requiredLength}}</span>
+      }
+
+    </div>
+
+    <!-- Password -->
+    <div>
+      <label class="form-label">Password : </label>
+      <input type="password" class="form-control" name="password" formControlName="password">
+
+       @if (form.controls["password"].touched && form.controls["password"].errors?.["required"]) {
+        <span class="text-danger">Password is required</span>
+      } @else if (form.controls["password"].touched && form.controls["password"].errors?.["minlength"]) {
+        <span class="text-danger">Password must be more than {{form.controls["password"].errors?.["minlength"].requiredLength}}</span>
+      }
+
+    </div>
+
+    <input
+      type="submit"
+      value="Login"
+      class="btn btn-success w-100 fs-1 fw-bold"
+      [disabled]="form.invalid"
+      >
+  </form>
+</div>
