@@ -1,0 +1,33 @@
+{
+  "description": "everywhere",
+  "librarain": "someone",
+  "books": [
+    {
+      "title": "title one",
+      "isbn": 123,
+      "author": "ahmed khaled tawfiq",
+      "preface": "why I wrote this book",
+      "parts": [
+        {
+          "title": "part 1 title",
+          "chapters": [
+            {
+              "title": "ch 01 : pla pla",
+              "sections": [
+                {
+                  "content": "content 1"
+                },
+                {
+                  "content": "content 1"
+                },
+                {
+                  "content": "content 1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

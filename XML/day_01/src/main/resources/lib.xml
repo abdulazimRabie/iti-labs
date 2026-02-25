@@ -1,0 +1,57 @@
+<library>
+    <location>Minia - Maghagha</location>
+    <description>Best Library in the world</description>
+    <librarain>Abdu el shaki</librarain>
+        <book title="title of book 2" isbn="3333">
+            <author>Ahmed Khaled Tawfik</author>
+            <preface>This is preface</preface>
+            <part>
+                <title>How to manage el ferran</title>
+                <chapter>
+                    <title>Ttitle chapter</title>
+                    <summary>let's see how el ferran is so important in our life</summary>
+                    <section>
+                        Lorem Ipsum pla pla pla
+                    </section>
+                </chapter>
+            </part>
+            <part>
+                <title>Part 2 : Title</title>
+                <chapter>
+                    <title>part 2: chapter title 2</title>
+                    <summary>Summary of chapter 2 and title</summary>
+                    <section>
+                        <content>content of section 1</content>
+                    </section>
+                    <section>
+                        <content>content of section 1</content>
+                    </section>
+                </chapter>
+            </part>
+        </book>
+
+    <book title="title of book 2" isbn="3333">
+        <author>Author of book 2</author>
+        <preface>This is preface</preface>
+        <part>
+            <title>Ttitle of book 2</title>
+            <chapter>
+                <title>Ttitle chapter</title>
+                <summary>let's see how el ferran is so important in our life</summary>
+                <section>
+                    Lorem Ipsum pla pla pla
+                </section>
+            </chapter>
+        </part>
+        <part>
+            <title>Part 2 : Title</title>
+            <chapter>
+                <title>part 2: chapter title 2</title>
+                <summary>Summary of chapter 2 and title</summary>
+                <section>
+                    Lorem Ipsum pla pla pla
+                </section>
+            </chapter>
+        </part>
+    </book>
+</library>
