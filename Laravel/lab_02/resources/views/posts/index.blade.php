@@ -10,8 +10,12 @@
 
 @section('content')
     <div class="container mx-auto">
+        <h1>Vue component</h1>
+        <Test></Test>
+
         <div class="my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($posts as $post)
+            <div>
                 <a href="/posts/{{ $post->id }}"
                 class="block border-2 border-black bg-white p-4 shadow-[4px_4px_0_0] hover:bg-yellow-100 focus:ring-2 focus:ring-yellow-300 focus:outline-0 sm:p-6">
 
@@ -37,13 +41,18 @@
                     <p class="mt-2 line-clamp-2 text-gray-700">
                         {{ $post->content }}
                     </p>
-
+                                        
                 </a>
+                
+                <div>
+                    <view-ajax :id="{{ $post->id }}"></view-ajax>
+                </div>
+            </div>
             @endforeach
         </div>
 
         <div class="mt-6 flex flex-col-reverse">
-            @dump($posts->links())
+            {{-- @dump($posts->links()) --}}
 
             {{ $posts->links() }}
         </div>

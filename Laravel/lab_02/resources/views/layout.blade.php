@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('PageTitle')</title>
 
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="bg-gray-100 text-gray-900">
@@ -41,7 +42,7 @@
         </h1>
     </div>
 
-    <main class="mx-auto max-w-screen-xl px-4 pb-8 sm:px-6 lg:px-8">
+    <main class="mx-auto max-w-screen-xl px-4 pb-8 sm:px-6 lg:px-8" id="app">
         @yield('content')
     </main>
 
