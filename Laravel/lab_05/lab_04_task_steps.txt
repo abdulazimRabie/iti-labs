@@ -1,0 +1,221 @@
+1- php artisan make:migration create_articles_table
+
+2- public function up()
+{
+    Schema::create('articles', function (Blueprint ) {
+        ->id();
+        ->string('title');
+        ->text('content');
+        ->timestamps();
+    });
+}
+
+3- php artisan migrate
+
+4- php artisan make:model Article
+
+5- protected  = [
+    'title',
+    'content'
+];
+
+6- php artisan make:controller Api/ArticleController --api
+
+
+7- use App\Models\Article;
+use Illuminate\Http\Request;
+
+class ArticleController extends Controller
+{
+    public function index()
+    {
+        return Article::all();
+    }
+
+    public function store(Request )
+    {
+         = ->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+
+        return Article::create();
+    }
+
+    public function show()
+    {
+        return Article::findOrFail();
+    }
+
+    public function update(Request , )
+    {
+         = Article::findOrFail();
+
+        ->update(->all());
+
+        return ;
+    }
+
+    public function destroy()
+    {
+        Article::destroy();
+        return response()->json(['message' => 'Deleted']);
+    }
+}
+
+
+8- php artisan install:api
+
+
+9- api.php
+        use App\Http\Controllers\Api\ArticleController;
+        Route::apiResource('articles', ArticleController::class);
+___________________________________________________________________________________________
+
+
+1- composer require laravel/sanctum
+
+2- php artisan vendor:publish --provider=LaravelSanctumSanctumServiceProvider
+php artisan migrate
+
+3- in app/Models/User.php:
+    use Laravel\Sanctum\HasApiTokens;
+
+    use HasApiTokens;
+
+
+4- php artisan make:controller Api/AuthController
+
+    <?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
+
+class AuthController extends Controller
+{
+    public function register(Request )
+    {
+         = User::create([
+            'name' => ->name,
+            'email' => ->email,
+            'password' => Hash::make(->password),
+        ]);
+
+         = ->createToken('api-token')->plainTextToken;
+
+        return response()->json([
+            'user' => ,
+            'token' => 
+        ]);
+    }
+
+    public function login(Request )
+    {
+         = User::where('email', ->email)->first();
+
+            return response()->json(['message' => 'Invalid credentials'], 401);
+        }
+
+         = ->createToken('api-token')->plainTextToken;
+
+        return response()->json([
+            'user' => ,
+            'token' => 
+        ]);
+    }
+}
+
+5- in api.php :
+    use App\Http\Controllers\AuthController;
+
+    Route::post('register', [AuthController::class, 'register']);
+    Route::post('login', [AuthController::class, 'login']);
+
+
+6-  Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('articles', ArticleController::class);
+});
+
+_______________________________________________________________________
+
+ 1- middleware --> in v13 only in routes 
+            web.php: 
+                Route::resource('posts', PostController::class)
+                    ->middleware('auth')
+                    ->only(['store', 'update', 'destroy']);
+                or
+                Route::resource('posts', PostController::class)
+                ->middleware('auth')
+                ->except(['index', 'show']);
+            api.php:
+
+            Route::resource('posts', PostController::class)
+                ->middleware('auth:sanctum')
+                ->only(['store', 'update', 'destroy']);
+
+
+2-  php artisan make:middleware CheckAppKey
+
+3- app/Http/Middleware/CheckAppKey.php 
+        namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class CheckAppKey
+{
+    public function handle(Request , Closure ): Response
+    {
+         = ->header('X-APP-KEY');
+
+        if ( !== 'my-secret-key') {
+            return response()->json([
+                'message' => 'Invalid or missing APP KEY'
+            ], 403);
+        }
+
+        return ();
+    }
+}
+
+4- bootstrap/app.php
+    ->withMiddleware(function () {
+    ->alias([
+        'check.app.key' => \App\Http\Middleware\CheckAppKey::class,
+    ]);
+})
+
+
+5- routes/api.php
+
+
+    ->middleware('check.app.key');
+_______________________________________________________________________
+
+Resources: 
+        1- php artisan make:resource PostResource
+
+        2- app/Http/Resources/PostResource.php
+        public function toArray()
+            {
+                return [
+                    'id' => ->id,
+                    'title' => ->title,
+                    'content' => ->content,
+                ];
+            }
+        3- controller: 
+             public function index()
+                {
+                    // return Article::all();
+                    return ArticleResource::collection(Article::all());
+                }
+
+_______________________________________________________________________
+
+
