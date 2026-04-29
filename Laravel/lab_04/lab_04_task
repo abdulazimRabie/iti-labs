@@ -1,0 +1,35 @@
+Lab 4
+1. Upload image to post , and validate extensions are only
+(.jpg, .png) , and use Storage to store and show images also
+when updating post we remove the old image, and when
+deleting post we remove the old image
+https://laravel.com/docs/master/filesystem#file-uploads
+Hint:- see if Mutators can make your code cleaner
+2. Policy (Post Management Authorization)
+● Policy: PostPolicy
+Rules:
+● Only the owner of the post can:
+○ Update
+○ Delete
+● Controller uses $this->authorize()
+3. Gate (Admin Access Control)
+Create a gate to restrict admin features.
+● Add role column to users table
+● Define gate: is-admin, is-super-admin
+● Super Admin can do all function
+○ Hint → Gate::before
+admin can access:
+● Admin dashboard route
+● Posts,Comments → create, delete functions
+Deliverables:
+● Gate defined in AuthServiceProvider
+● Blade uses @can('is-admin')
+4. Github Login (Socialite)
+Implement Github authentication.
+Requirements:
+● Install Laravel Socialite
+● Login with Github
+● Store user if not exists
+After login:
+● Redirect to dashboard
+● Show user name and email
