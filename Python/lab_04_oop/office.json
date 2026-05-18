@@ -1,0 +1,20 @@
+{
+    "office_name": "ITI Smart Village",
+    "employees": [
+        {
+            "id": 1,
+            "name": "Samy",
+            "money": 4970,
+            "mood": "happy",
+            "healthRate": 75,
+            "email": "samy@mail.com",
+            "salary": 4990,
+            "distanceToWork": 20,
+            "car": {
+                "name": "Fiat128",
+                "fuelRate": 80,
+                "velocity": 0
+            }
+        }
+    ]
+}

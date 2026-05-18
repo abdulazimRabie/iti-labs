@@ -1,0 +1,7 @@
+From: samy@mail.com
+To: manager@mail.com
+Hi, Manager
+This is an email template
+thanks
+
+Attendance Report
